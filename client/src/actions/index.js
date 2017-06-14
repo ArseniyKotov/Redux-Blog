@@ -16,8 +16,7 @@ export function fetchPosts() {
 }
 
 export function createPost(values, cb) {
-  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
-            .then(() => cb());
+  const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values).then(() => cb());
   
   return {
     type: CREATE_POST,
@@ -36,8 +35,7 @@ export function fetchPost(id) {
 }
 
 export function deletePost(id, cb) {
-  const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
-        .then(() => cb());
+  const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`).then(() => cb());
 
   return {
     type: DELETE_POST,
